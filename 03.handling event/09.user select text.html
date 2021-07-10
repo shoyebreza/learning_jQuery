@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display user selected text </title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        p{
+            color: red;
+            font-size: 17px;
+            width: 670px;
+        }
+
+        #textarea{
+            height: 200px;
+            width: 100%;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="Bold"><b>B</b></button>
+    <button id="italic"><b>I</b></button>
+    <button id="underline"><b>U</b></button>
+
+
+    <div id='textarea' contenteditable>
+    Select some text and click the button to make it bold...
+    <br>Or write your own text
+    </div>
+
+    <script>
+        $(document).ready(function()
+        {
+            $('#Bold').click(function() {
+                document.execCommand('bold');
+            });
+
+            $('#italic').click(function() {
+                document.execCommand('italic');
+            });
+
+            $('#underline').click(function() {
+                document.execCommand('underline');
+            });
+        });
+    </script>
+</body>
+</html>

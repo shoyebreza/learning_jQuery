@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adding input field </title>
+    <script src="jquery.3.5.0.js"></script>
+    <style>
+        fieldset{width: 450px;}
+        ul{
+            padding: 2px;
+            list-style: none;
+        }
+
+        label{
+            float: left;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form action="process.php" method="POST">
+        <fieldset>
+            <legend>website you visit daily</legend>
+            <ul id="site">
+                <li>
+                    <label for="">name : </label>
+                    <input type="text" value="">
+                </li>
+            </ul>
+            <input type="button" value="add more" id="add">
+        </fieldset>
+    </form>
+
+    <script>
+        $(document).ready(function()
+        {
+            $('#add').click(function()
+            {
+                var strt = '<li>';
+                    strt+= '<label for="">name : </label><input type="text" value="">';
+                    strt+= '<input type="button" value="remove" class="remove">';
+                    strt+= '</li>';
+                    $('#site').append(strt);
+            });
+
+             $(document).on('click', '.remove', function ()
+            {
+                $(this).parent('li').remove();
+            });
+        });
+    </script>
+</body>
+</html>

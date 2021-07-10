@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<browsers>
+  <browser name="Firefox" value="FF" votes="1"/>
+  <browser name="Google Chrome" value="GC" votes="0"/>
+  <browser name="IE" value="IE" votes="0"/>
+</browsers>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binding and unbinding element</title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        ul{
+            background-color: blueviolet;
+            list-style: none;
+            margin: 0pt;
+            padding: 0pt;
+            width: 250px;
+        }
+
+        li{
+            cursor: pointer;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>bangladesh</li>
+        <li>pakistan </li>
+        <li>nepal </li>
+        <li>vutan</li>
+        <li>usa </li>
+        <li>india</li>
+    </ul>
+
+    <input type="text">
+
+    <select>
+        <option value="africa">africa </option>
+        <option value="antarktica ">antarktica </option>
+        <option value="asia">asia</option>
+        <option value="austrilia">austrilia</option>
+        <option value="europe">europe</option>
+        <option value="south america"> southamerica</option>
+
+    </select>
+
+    <input type="button" value="unbind select box">
+
+    <script>
+        $(document).ready(function()
+        {
+            $("input:text").bind(
+            {
+                focus:function()
+                {
+                    $(this).val("");
+                },
+
+                blur:function()
+                {
+                    $(this).val("enter some text ");
+                }
+            });
+
+            $("li").bind("click", function()
+            {
+                $(this).css("background-color","hotpink");
+            });
+
+            $("select").bind("change",function()
+            {
+                alert("you selected :"+ $(this).val());
+            });
+
+            $("input:button").bind("click", function()
+            {
+                $("select").unbind("change");
+            });
+        });
+    </script>
+</body>
+</html>

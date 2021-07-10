@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handaling error </title>
+    <script src="jquery.3.5.0.js"></script>
+    <style>
+        ul{
+            border: 1px dotted black;
+            list-style:none ;
+            margin: 0pt;
+            padding: 0pt;
+            float: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+            width: 300px;
+        }
+        li{
+            padding: 10px 5px;
+            border-bottom: 1px solid black;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <label for="filename"> enter file name</label>
+    <input type="text" id="filename">
+    <input type="button" value="load file">
+    <p id="result"></p>
+    <script>
+        $(document).ready(function()
+        {
+            $('input:button').click(function(){
+
+            
+            if($('#filename').val() == '')
+            {
+                $('#result').html('<span>please provide a file name </span>');
+                return;
+            }
+            $.ajax({
+                url: $('#filename').val(),
+                method : 'get',
+                success : function(data)
+                {
+                    $('#result').html(data);
+                },
+                error:function()
+                {
+                    $('result').html('<span> an error occured </span>');
+                }
+
+              });
+
+          });
+      });
+    </script>
+</body>
+</html>

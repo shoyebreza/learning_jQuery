@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inserting element</title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        div{
+            margin: 10px;
+            padding: 12px;
+            border: 2px solid #666;
+            width: 60px;
+            background-color: blue;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function()
+        {
+                $("div").click(function()
+                {
+                    $(this).before("<div> extra division</div>");
+                });
+        });
+    </script>
+</head>
+<body>
+    <p>click any squre bellow </p>
+    <span id="result"></span>
+    <div style="background-color: blue;"></div>
+    <div style="background-color: green;"></div>
+    <div style="background-color: yellow;"></div>
+</body>
+</html>

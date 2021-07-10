@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sending data to php </title>
+    <script src="jquery.3.5.0.js"></script>
+    <style>
+        ul{
+            border: 1px solid black;
+            list-style: none;
+            margin: 0pt;
+            padding: 0pt;
+            float: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        li{
+            padding: 10px 5px;
+            border-bottom: 1px solid black;
+            text-align: center;
+
+        }
+
+        label{
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+            float: left;
+        }
+
+        #response{
+            display: none;
+            }
+            #button{
+                background-color: cadetblue;
+            }
+    </style>
+</head>
+<body>
+    <form action="">
+        <ul id="information">
+                <li>
+                    <label for="">email : </label>
+                    <input type="text" name="email">
+                </li>
+                <li>
+                    <label for="">full name :</label>
+                    <input type="text" name="fullname">
+                </li>
+
+                <li>
+                    <label for=""> gender : </label>
+                    <input type="radio" name="gender" value="male" checked>Male
+                    <input type="radio" name="gender" value="female" checked>Female
+                    <input type="radio" name="gender" value="semale" checked>Semale
+                </li>
+
+                <li>
+                    <label for=""> country</label>
+                    <select name="country">
+                        <option value="bd">bd</option>
+                        <option value="pak">pak</option>
+                        <option value="ind">ind</option>
+                        <option value="usa ">usa</option>
+                    </select>
+                </li>
+                <li>
+                    <input type="button" value="GO" name="submit" id="button">
+                </li>
+        </ul>
+        <p id="response"></p>
+    </form>
+    <script>
+        $(document).ready(function()
+        {
+            $('input:button').click(function()
+            {
+                var data = $('form:first').serialize();
+
+                $.post('process.php', data,function(data)
+                {
+                    $('#information').hide();
+                    $('#response').html(data).show();
+                },
+
+                'html'
+                
+                );
+            });
+        });
+    </script>
+</body>
+</html>

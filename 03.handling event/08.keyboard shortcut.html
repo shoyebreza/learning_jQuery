@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard shortcut </title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        div{
+            border: 1px solid black;
+            float: left;
+            height: 200px;
+            width: 220px;
+            margin: 10px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#test").keypress(function(e){
+                if (e.which == 103) 
+                {
+                    alert('g'); 
+                };
+            });
+
+
+
+            $(document).keydown(function(event) {
+                if (event.altKey && event.which === 88)
+                {
+                    alert("<h1> he he he &#128540; Alt + X pressed </h1>");
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+        <p>
+            Press Alt + X 
+            &#128568;
+        </p>
+    <input type="text" id="test" />
+</body>
+</html>

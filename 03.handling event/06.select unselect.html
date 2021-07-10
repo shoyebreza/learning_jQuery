@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select unselect</title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <script>
+      $(document).ready(function()
+      {
+        $("#select_all").change(function(){  
+              $(".checkbox").prop('checked', $(this).prop("checked"));
+          });
+
+           
+          $('.checkbox').change(function(){ 
+            
+              if(false == $(this).prop("checked")){ 
+                  $("#select_all").prop('checked', false); 
+              }
+           
+            if ($('.checkbox:checked').length == $('.checkbox').length ){
+              $("#select_all").prop('checked', true);
+            }
+          });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li><input type="checkbox" id="select_all"/> Selecct/unselect All</li>
+    <hr>
+    <li><input class="checkbox" type="checkbox" name="check[]"> This is Item 1</li>
+    <li><input class="checkbox" type="checkbox" name="check[]"> This is Item 2</li>
+    <li><input class="checkbox" type="checkbox" name="check[]"> This is Item 3</li>
+    <li><input class="checkbox" type="checkbox" name="check[]"> This is Item 4</li>
+    <li><input class="checkbox" type="checkbox" name="check[]"> This is Item 5</li>
+    <li><input class="checkbox" type="checkbox" name="check[]"> This is Item 6</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>missing image check </title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        div{
+            border: 1px solid black;
+            float: left;
+        }
+
+        img{
+            width: 180px;
+            height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="imagecontainer"></div>
+
+    <script>
+        $(document).ready(function()
+        {
+            var image =['aa.jpg','bb.jpg','/images/3.jpg','dd.jpg'];
+            var html = "";
+            $.each(image, function(key,value)
+            {
+                html+= '<img src="'+value+'">';
+            });
+            $("#imagecontainer").html(html);
+
+            $('img').on('error',function()
+            {
+                $(this).replaceWith('<img src="missing.png" alt="couldnot loa image">');
+            });
+        });
+    </script>
+</body>
+</html>

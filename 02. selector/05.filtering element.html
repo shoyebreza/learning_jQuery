@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filtering element</title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        .selected{color: brown;}
+    </style>
+    <script>
+        $(document).ready(function()
+        {
+            $("li").filter(".middle").addClass("selected");
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <ol>
+            <li class="top">list item 1 </li>
+            <li class="top"> list item 2</li>
+            <li class="middle">list item 3  </li>
+            <li class="middle">list item 4 </li>
+            <li class="bottom">list item  5</li>
+            <li class="bottom">list item 6 </li>
+        </ol>
+    </div>
+</body>
+</html>

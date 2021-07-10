@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle element</title>
+    <script src="jquery.3.5.0.js"></script>
+    <style>
+        .clickme{
+            margin: 10px;
+            padding: 12px;
+            border: 2px solid #6666;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="clickme"> click me </div>
+        <div class="target">
+            <img src="aa.jpg" alt="image">
+        </div>
+        <div class="log"> </div>
+    </div>
+
+    <script>
+        $(document).ready(function()
+        {
+            $(".clickme").click(function(event)
+            {
+                $(".target").toggle('slow', function()
+                {
+                    $(".log").text("transection complete");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

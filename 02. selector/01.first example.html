@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery selector</title>
+    <script src="jquery.3.6.0.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+          var pars = $('p');
+          for (i=0; i<pars.length; i++)  
+          {
+              alert("found pragraph : " + pars[i].innerHTML);
+          }
+        });
+    </script>
+    
+</head>
+<body>
+    <div>
+        <p class="myclass">this is a paragraph</p>
+        <p id="myid">this is second pragraph </p>
+        <p>this is third pragraph </p>
+    </div>
+</body>
+</html>

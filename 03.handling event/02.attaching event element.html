@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attaching event element</title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <style>
+        div{
+            border: 1px solid black;
+            cursor: pointer;
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="create new " id="button">
+    <div class="future"> already on page </div>
+
+    <script>
+        $(document).ready(function()
+        {
+            $("#button").click(function()
+            {
+                $('body').append('<div class="future"> i am new future </div>');
+            });
+
+            $("div").bind("click", function()
+            {
+                $(this).css({"color":"red", "font-weight":"bold"})
+                .html("you click me");
+            });
+        });
+    </script>
+</body>
+</html>

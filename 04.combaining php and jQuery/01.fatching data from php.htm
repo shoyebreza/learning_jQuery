@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetching data </title>
+    <script src="jquery.3.5.0.js"></script>
+    <style>
+        ul{
+            border: 2px solid black;
+            list-style: none;
+            margin: 0pt;
+            padding: 0pt;
+            float: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+            width: 300px;
+        }
+
+        li{
+            padding:10px  5px ;
+            border-bottom: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <p> show list of :
+            <select name="" id="choice">
+                <option value="">select</option>
+                <option value="good">good guys</option>
+                <option value="bad">bad guys</option>
+            </select>
+        </p>
+        <p id="result"></p>
+    </form>
+    <script>
+
+        $(document).ready(function()
+        {
+            $("#choice").change(function()
+            {
+                if($(this).val() != '')
+                {
+                    $.get(
+                        'data.php', {what:$(this).val() },
+                        function(data){
+                            $("#result").html(data);
+
+                        });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

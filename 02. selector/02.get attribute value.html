@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get attribute value</title>
+    <script lang="javascript" type="text/javascript" src="jquery.3.6.0.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            var title = $("em").attr("title");
+            $("#divid").text(title);
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <em title="this title attribute copied from em tag "> this is the first pragraph</em>
+        <p id="myid">this is the second pragraph </p>
+        <div id="divid"></div>
+    </div>
+</body>
+</html>
